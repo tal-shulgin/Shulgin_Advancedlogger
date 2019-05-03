@@ -1,0 +1,24 @@
+{
+    "name": "shulgin/module-advancedlogger",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "shulgin23@gmail.com",
+            "name": "Tal Shulgin"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "understand/understand-monolog": "^1.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Shulgin\\Advancedlogger\\": ""
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Custom logger -->
+	<type name="Shulgin\AdvancedLogger\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Shulgin\AdvancedLogger\Logger\Handler\System" type="Shulgin\AdvancedLogger\Logger\Handler">
+        <arguments>
+            <argument name="fileName" xsi:type="string">system.log</argument>
+            <argument name="loggerType" xsi:type="string">info</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Shulgin\AdvancedLogger\Logger\Handler\Debug" type="Shulgin\AdvancedLogger\Logger\Handler">
+        <arguments>
+            <argument name="fileName" xsi:type="string">debug.log</argument>
+            <argument name="loggerType" xsi:type="string">debug</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Shulgin\AdvancedLogger\Logger\Handler\Exception" type="Shulgin\AdvancedLogger\Logger\Handler">
+        <arguments>
+            <argument name="fileName" xsi:type="string">exception.log</argument>
+            <argument name="loggerType" xsi:type="string">info</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Shulgin\AdvancedLogger\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">myLoggerName</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Shulgin\AdvancedLogger\Logger\Handler</item>
+                <item name="debug" xsi:type="object">Shulgin\AdvancedLogger\Logger\Handler</item>
+                <item name="exception" xsi:type="object">Shulgin\AdvancedLogger\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--End Custom logger -->
+</config>
+

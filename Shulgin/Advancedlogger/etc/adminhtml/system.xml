@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="advanced" sortOrder="999" translate="label">
+			<label>advanced</label>
+		</tab>
+		<section id="logger" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label">
+			<label>Advanced Logging Config</label>
+			<tab>advanced</tab>
+			<resource>Shulgin_AdvancedLogger::config_shulgin_advancedlogger</resource>
+			<group id="understandio" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label">
+				<label>understand.io general config</label>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="api_key" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+					<label>Api Key</label>
+					<comment>asdasdas</comment>
+				</field>
+				<field id="log_level" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="multiselect">
+					<label>Log Level</label>
+					<comment/>
+					<source_model>Shulgin\AdvancedLogger\Model\Config\Source\LogLevel</source_model>
+				</field>
+			</group>
+
+			<group id="chromephphandler" showInDefault="1" showInStore="0" showInWebsite="1" sortOrder="10" translate="label">
+				<label>chrome logging general config</label>
+				<field id="active" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>active</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="log_level" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="multiselect">
+					<label>log_level</label>
+					<comment/>
+					<source_model>Shulgin\AdvancedLogger\Model\Config\Source\LogLevel</source_model>
+				</field>
+			</group>
+
+		</section>
+	</system>
+</config>
